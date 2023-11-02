@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>ToDo App</title>
+</head>
+<body>
+
+    <nav>
+        <% if(locals.navbar) { %>
+            <ul>
+            
+                <% for(let i=0;i<navbar.length;i++) { %>
+                    <li><a href="" class="act" data-value="<%= i+1 %>"><%= navbar[i] %></a></li>
+                <% } %>
+                          
+            </ul>
+        <% } %>
+        
+        <form method="post" action="/new">
+            <input type="text" name="new_act" placeholder="Work">
+            <div class="plus">
+                <input type="submit" class="btn-plus" value="+">
+            </div>
+        </form>
+    </nav>
+
+    <main class="activity">
+        <div class="title">
+            <h1>Title</h1>
+        </div>
+        <div class="activity-list">
+            <% if(locals.activity) { %>
+                <ul>
+                <% for(let i =0;i<activity.length;i++) { %>
+                    
+                    <li><%= activity[i] %></li>
+                    <hr class="hr-act">
+                <% } %>
+                
+                </ul>
+            <% } %>
+        </div>
+        <div class="new-act">
+            <form method="POST">
+                <input type="text" name="new_act" placeholder="Add new activity">
+                <input type="submit" value="Add">
+            </form>
+        </div>
+    </main>
+
+    
+<script src="/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+:root{
+    --font: 'SF Pro Display', sans-serif;
+    --main: #FF9F9F;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+/* navbar */
+
+nav{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+nav ul {
+    list-style: none;
+}
+
+nav ul li{
+    display: inline;
+    padding: 0 10px;
+    font-size: 18px;
+}
+
+nav ul a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    
+}
+
+nav ul .act:hover{
+    border-bottom: 2px solid black;
+}
+
+.plus{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.plus input{
+    font-size: 34px;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--main);
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+form{
+    margin-left: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+form input[type="text"]{
+    height: 30px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+    
+}
+
+
+/* activity */
+
+.activity{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+.activity-list{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    
+}
+.activity-list ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+.activity-list ul li{
+    padding-top: 20px;
+    font-size: 24px;
+    padding-right: 80px;
+    padding-left: 5px;
+}
+
+.hr-act{
+    border: none;
+    height: 2px;
+    background-color: var(--main);
+    margin-top: 2px;
+}
+
+.title{
+    background-color: var(--main);
+    border-radius: 10px;
+    padding: 0 50px;
+    color: white;
+}
+
+.new-act input[type="submit"]{
+    border: none;
+    background-color: var(--main);
+    font-size: 18px;
+    padding: 7px 15px;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 10px;
+}
