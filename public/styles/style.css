@@ -2,7 +2,8 @@
 
 :root{
     --font: 'SF Pro Display', sans-serif;
-    --main: #FF9F9F;
+    --main: #dbc4f0;
+    --bg: #faf3f0;
 }
 
 body{
@@ -10,6 +11,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font);
+    background-color: var(--bg);
 }
 
 /* navbar */
@@ -40,6 +42,12 @@ nav ul .act:hover{
     border-bottom: 2px solid black;
 }
 
+
+.cat-com{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .plus{
     width: fit-content;
     display: flex;
@@ -74,8 +82,9 @@ form input[type="text"]{
     outline: none;
     border-bottom: 1px solid black;
     font-size: 18px;
-    
+    background-color: transparent;
 }
+
 
 
 /* activity */
@@ -86,37 +95,65 @@ form input[type="text"]{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 5vh;
-}
-.activity-list{
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    
-}
-.activity-list ul{
-    list-style: none;
-    padding-left: 0;
-}
-
-.activity-list ul li{
-    padding-top: 20px;
-    font-size: 24px;
-    padding-right: 80px;
-    padding-left: 5px;
-}
-
-.hr-act{
-    border: none;
-    height: 2px;
-    background-color: var(--main);
-    margin-top: 2px;
+    margin-top: 10vh;
 }
 
 .title{
     background-color: var(--main);
     border-radius: 10px;
     padding: 0 50px;
-    color: white;
+    box-shadow: 5px 10px 20px rgba(0,0,0,.3);
+}
+
+.activity-list{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 50px;
+    padding-bottom: 50px;
+    
+}
+.activity-list ul{
+    list-style: none;
+    padding-left: 0;
+    width: 80%;
+}
+
+.activity-list ul li{
+    padding-top: 20px;
+    font-size: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activity-list li i{
+    cursor: pointer;
+
+}
+
+.activity-list li i:hover{
+    color: rgba(255, 0, 0, 0.8);
+}
+
+
+.hr-act{
+    border: none;
+    height: 2px;
+    background-color: var(--main);
+    margin-top: 5px;
+}
+
+
+
+.new-act{
+    margin-top: 2vh;
 }
 
 .new-act input[type="submit"]{
@@ -124,8 +161,18 @@ form input[type="text"]{
     background-color: var(--main);
     font-size: 18px;
     padding: 7px 15px;
-    color: white;
     cursor: pointer;
     margin-left: 10px;
     border-radius: 10px;
+}
+.new-act form{
+    margin: 0;
+}
+
+.new-act input[type="text"]{
+    border-bottom: 1px solid var(--main);
+
+}
+.new-act input[type="text"]:focus{
+    border-bottom: 2px solid var(--main)
 }

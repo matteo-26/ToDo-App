@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1030d32312.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/styles/style.css">
     <title>ToDo App</title>
 </head>
@@ -13,42 +14,51 @@
             <ul>
             
                 <% for(let i=0;i<navbar.length;i++) { %>
-                    <li><a href="" class="act" data-value="<%= i+1 %>"><%= navbar[i] %></a></li>
+                    <li><a href="" class="act" data-value="<%= navbar[i] %>"><%= navbar[i] %></a></li>
                 <% } %>
                           
             </ul>
         <% } %>
         
-        <form method="post" action="/new">
-            <input type="text" name="new_act" placeholder="Work">
-            <div class="plus">
-                <input type="submit" class="btn-plus" value="+">
-            </div>
-        </form>
+        <div class="cat-com">
+            <form method="post" action="/new">
+                <input type="text" name="new_act" placeholder="Work" required>
+                <div class="plus">
+                    <input type="submit" class="btn-plus" value="+">
+                </div>
+                <div class="plus">
+                    <input type="submit" class="btn-minus" formaction="/del" value="-">
+                </div>
+            </form>
+            
+        </div>
     </nav>
 
     <main class="activity">
         <div class="title">
-            <h1>Title</h1>
+            <h1><%= title %></h1>
         </div>
         <div class="activity-list">
+           
             <% if(locals.activity) { %>
                 <ul>
                 <% for(let i =0;i<activity.length;i++) { %>
                     
-                    <li><%= activity[i] %></li>
+                    <li><%= activity[i] %> <i id="<%= i %>" class="fa-solid fa-trash-can delete"></i></li>
                     <hr class="hr-act">
                 <% } %>
                 
                 </ul>
             <% } %>
+            <div class="new-act">
+                <form method="POST" action="/new-act">
+                    <input type="text" name="new_act" placeholder="Add new activity" required autocomplete="off">
+                    <input type="submit" value="Add">
+                </form>
+            </div>
+            
         </div>
-        <div class="new-act">
-            <form method="POST">
-                <input type="text" name="new_act" placeholder="Add new activity">
-                <input type="submit" value="Add">
-            </form>
-        </div>
+        
     </main>
 
     
