@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
+import fs from "fs";
 
 const app = express();
 const port = 3000;
@@ -8,25 +9,25 @@ const port = 3000;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+const config = JSON.parse(fs.readFileSync('config.json', 'utf8'));
 
 
 var navbar = [];
 var activity = [];
 var receivedValue = "";
 var title = "";
-var catId = 1;
-var actId = 1;
-
 
 const db = new pg.Client({
     host: "localhost",
-    password: "",
+    password: config.password,
     user: "postgres",
     port: 5432,
     database: "todoapp"
 });
 
 db.connect();
+
+
 
 
 async function getData(){
