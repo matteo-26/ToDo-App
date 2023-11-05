@@ -20,7 +20,7 @@ var actId = 1;
 
 const db = new pg.Client({
     host: "localhost",
-    password: "PostOettam",
+    password: "",
     user: "postgres",
     port: 5432,
     database: "todoapp"
